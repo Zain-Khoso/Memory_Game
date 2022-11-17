@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" 
+            />
+        <style>
+            * {
+                margin: 0px;
+            }
+            body {
+                background: rgb(10, 35, 163);
+                background: radial-gradient(
+                    circle,
+                    rgba(10, 35, 163, 1) 32%,
+                    rgba(96, 44, 55, 1) 100%
+                );
+            }
+
+            #container {
+                width: 35em;
+                height: 25em;
+                background-color: rgba(255, 255, 255, 0.293);
+                padding: 3em;
+                border-radius: 2em;
+                margin: 1em auto 10px auto;
+
+                display: grid;
+            }
+
+            .item {
+                box-sizing: border-box;
+                width: 9em;
+                height: 9em;
+                background-color: rgb(46, 201, 149);
+            }
+
+            #item1 {
+                grid-column-start: 0;
+                grid-column-end: 1;
+                grid-row-start: 0;
+                grid-row-end: 1;
+            }
+            #item2 {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 0;
+                grid-row-end: 1;
+            }
+            #item3 {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 0;
+                grid-row-end: 1;
+            }
+            #item4 {
+                grid-column-start: 0;
+                grid-column-end: 1;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            #item5 {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            #item6 {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            #stats {
+                box-sizing: border-box;
+                width: 15em;
+                background-color: rgba(255, 255, 99, 0.281);
+                padding: 1em;
+                border: 1px solid black;
+                border-radius: 1em;
+                margin: 0px auto 0px auto;
+                text-align: center;
+                color: black;
+            }
+        </style>
+        <title>Memory Game</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Navbar</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="http://localhost:3000/to-do-app"
+                                >Todo App</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="http://localhost:3000/vowel-counter"
+                                >Vowels</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="http://localhost:3000/note-taker"
+                                >Notes</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="http://localhost:3000/finence-tracker"
+                                >Finence</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="http://localhost:3000/memory-game"
+                                >Game</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="container">
+            <div class="item" id="item1" onclick="clicked(this)">
+                <img src="http://localhost:3000/cat.jpg" class="cat" width="0" height="0" />
+            </div>
+            <div class="item" id="item2" onclick="clicked(this)">
+                <img
+                    src="/elephant.jpg"
+                    class="elephant"
+                    width="0"
+                    height="0" />
+            </div>
+            <div class="item" id="item3" onclick="clicked(this)">
+                <img src="/lion.png" class="lion" width="0" height="0" />
+            </div>
+            <div class="item" id="item4" onclick="clicked(this)">
+                <img src="/cat.jpg" class="cat" width="0" height="0" />
+            </div>
+            <div class="item" id="item5" onclick="clicked(this)">
+                <img
+                    src="/elephant.jpg"
+                    class="elephant"
+                    width="0"
+                    height="0" />
+            </div>
+            <div class="item" id="item6" onclick="clicked(this)">
+                <img src="/lion.png" class="lion" width="0" height="0" />
+            </div>
+        </div>
+        <div id="stats">
+            <h2 id="src">Score: 0</h2>
+            <h2 id="atpt">Attempts: 0</h2>
+        </div>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous">
+        </script>
+
+        <script>
+            const clkdDivs = [];
+
+            let trys = 1;
+            let attempts = 0;
+            let score = 0;
+
+            function clicked(node) {
+                if (trys <= 2) {
+                    if (trys == 1) {
+                        setupNode(node);
+                        
+                        trys++;
+                    } 
+                    else if (trys == 2 && clkdDivs.includes(node)) {
+                        alert("Don't try to be smart, Just play the game");
+                        resetEnv()
+                        trys = 1;
+                    } 
+                    else {
+                        setupNode(node)
+                        if (
+                            clkdDivs[0].firstElementChild.className ==
+                            clkdDivs[1].firstElementChild.className
+                        ) {
+                            score++;
+                            attempts++;
+                            src.textContent = `Score: ${score}`;
+                            atpt.textContent = `Attempts: ${attempts}`;
+
+                            setTimeout(function () {
+                                alert('Congrets, You have won the game.')
+                            }, 100)
+                            setTimeout(resetEnv, 500)
+                        } 
+                        else {
+
+                            attempts++;
+                            atpt.textContent = `Attempts: ${attempts}`;
+
+                            setTimeout(function () {
+                                alert('Game Over, Try again.')
+                            }, 100)
+                            setTimeout(resetEnv, 500)
+                        }
+                    }
+                }
+            }
+            function setupNode(node) {
+                node.firstElementChild.width = 145;
+                node.firstElementChild.height = 145;
+                clkdDivs.push(node);
+            }
+
+            function resetEnv() {
+                let fItem = clkdDivs.pop();
+                let sItem = clkdDivs.pop();
+
+                fItem.firstElementChild.width = 0;
+                fItem.firstElementChild.height = 0;
+                sItem.firstElementChild.width = 0;
+                sItem.firstElementChild.height = 0;
+
+                trys = 1;
+            }
+        </script>
+    </body>
+</html>
