@@ -1,3 +1,23 @@
+Array.prototype.random = function () {
+    return this.splice(Math.floor((Math.random()*this.length)), 1)[0]
+}
+Array.prototype.setupPaths = function () {
+    this.push('imgs/cat.jpg')
+    this.push('imgs/elephant.jpg')
+    this.push('imgs/lion.png')
+    this.push('imgs/cat.jpg')
+    this.push('imgs/elephant.jpg')
+    this.push('imgs/lion.png')
+}
+const imgDivs = [
+    item1, 
+    item2, 
+    item3, 
+    item4, 
+    item5, 
+    item6 
+]
+const imgPaths = []
 const clkdDivs = [];
 
 let trys = 1;
@@ -17,8 +37,8 @@ function clicked(node) {
         } else {
             setupNode(node);
             if (
-                clkdDivs[0].firstElementChild.className ==
-                clkdDivs[1].firstElementChild.className
+                clkdDivs[0].firstElementChild.src ==
+                clkdDivs[1].firstElementChild.src
             ) {
                 score++;
                 attempts++;
@@ -56,5 +76,17 @@ function resetEnv() {
     sItem.firstElementChild.width = 0;
     sItem.firstElementChild.height = 0;
 
+    imgPaths.setupPaths()
+    setupEnv()
+
     trys = 1;
 }
+
+function setupEnv() {
+    for (let child of container.children) {
+        child.firstElementChild.src = imgPaths.random()
+    }
+}
+
+imgPaths.setupPaths()
+setupEnv()
