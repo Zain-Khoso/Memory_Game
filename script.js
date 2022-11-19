@@ -9,14 +9,6 @@ Array.prototype.setupPaths = function () {
     this.push('imgs/elephant.jpg')
     this.push('imgs/lion.png')
 }
-const imgDivs = [
-    item1, 
-    item2, 
-    item3, 
-    item4, 
-    item5, 
-    item6 
-]
 const imgPaths = []
 const clkdDivs = [];
 
@@ -62,8 +54,8 @@ function clicked(node) {
     }
 }
 function setupNode(node) {
-    node.firstElementChild.width = 145;
-    node.firstElementChild.height = 145;
+    node.firstElementChild.width = node.offsetWidth;
+    node.firstElementChild.height = node.offsetHeight;
     clkdDivs.push(node);
 }
 
