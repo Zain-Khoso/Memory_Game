@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="code/D_Easy/style.css" />
+        <link rel="stylesheet" href="style.css" />
         <title>Memory Game</title>
     </head>
     <body>
@@ -14,8 +14,8 @@
         <div id="dif">
             <h3>Difficulty</h3>
             <select id="difficulty" onchange="handleUrl(this.value)">
-                <option value="easy" selected disabled>Easy</option>
-                <option value="standard">Standard</option>
+                <option value="easy">Easy</option>
+                <option value="standard" selected disabled>Standard</option>
                 <option value="hard">Hard</option>
             </select>
         </div>
@@ -38,12 +38,30 @@
             <div class="item" id="item6" onclick="clicked(this)">
                 <img width="0" height="0" />
             </div>
+            <div class="item" id="item7" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item8" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item9" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item10" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item11" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item12" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
         </div>
         <div id="stats">
             <h2 id="src">Score: 0</h2>
             <h2 id="atpt">Attempts: 3</h2>
         </div>
 
-        <script src="code/D_Easy/script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

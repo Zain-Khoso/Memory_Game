@@ -2,12 +2,18 @@ Array.prototype.random = function () {
     return this.splice(Math.floor(Math.random() * this.length), 1)[0];
 };
 Array.prototype.setupPaths = function () {
-    this.push("imgs/cat.jpg");
-    this.push("imgs/elephant.jpg");
-    this.push("imgs/lion.png");
-    this.push("imgs/cat.jpg");
-    this.push("imgs/elephant.jpg");
-    this.push("imgs/lion.png");
+    this.push("../../assets/cat.jpg");
+    this.push("../../assets/elephant.jpg");
+    this.push("../../assets/lion.png");
+    this.push("../../assets/dog.jpg");
+    this.push("../../assets/cat.jpg");
+    this.push("../../assets/elephant.jpg");
+    this.push("../../assets/lion.png");
+    this.push("../../assets/dog.jpg");
+    this.push("../../assets/cat.jpg");
+    this.push("../../assets/elephant.jpg");
+    this.push("../../assets/lion.png");
+    this.push("../../assets/dog.jpg");
 };
 const imgPaths = [];
 const clkdDivs = [];
@@ -18,21 +24,28 @@ let score = 0;
 
 function clicked(node) {
     if (attempts > 1) {
-        if (trys <= 2) {
-            if (trys == 1) {
-                setupNode(node);
-
-                trys++;
-            } else if (trys == 2 && clkdDivs.includes(node)) {
-                alert("Don't try to be smart, Just play the game");
-                resetEnv();
-                --attempts;
-                atpt.textContent = `Attempts: ${attempts}`;
+        if (trys == 1) {
+            setupNode(node);
+            trys++;
+        } else if (trys == 2) {
+            if (clkdDivs.includes(node)) {
+                alert("You cannot pick the same card two or more times.");
             } else {
                 setupNode(node);
+                trys++;
+            }
+        } else {
+            if (clkdDivs.includes(node)) {
+                alert("You cannot pick the same card two or more times.");
+            } else {
+                setupNode(node);
+
                 if (
-                    clkdDivs[0].firstElementChild.src ==
-                    clkdDivs[1].firstElementChild.src
+                    clkdDivs.every(
+                        (element) =>
+                            element.firstElementChild.src ==
+                            clkdDivs[0].firstElementChild.src
+                    )
                 ) {
                     score++;
                     attempts = 3;
@@ -48,37 +61,39 @@ function clicked(node) {
                         setupEnv();
                     }, 500);
                 } else {
-                    --attempts;
+                    attempts--;
                     atpt.textContent = `Attempts: ${attempts}`;
 
                     setTimeout(function () {
-                        alert(`Nice Try, You have ${attempts} Attempts left.`);
+                        alert(`Nice try, You have ${attempts} Attempts left.`);
+                        resetEnv();
                     }, 100);
-                    setTimeout(resetEnv, 500);
                 }
             }
         }
     } else {
-        if (trys <= 2) {
-            if (trys == 1) {
-                setupNode(node);
-
-                trys++;
-            } else if (trys == 2 && clkdDivs.includes(node)) {
-                alert("You wasted Your Last Atempt");
-                resetEnv();
-                imgPaths.setupPaths();
-                setupEnv();
-
-                attempts = 3;
-                score = 0;
-                atpt.textContent = `Attempts: ${attempts}`;
-                src.textContent = `Score: ${score}`;
+        if (trys == 1) {
+            setupNode(node);
+            trys++;
+        } else if (trys == 2) {
+            if (clkdDivs.includes(node)) {
+                alert("You cannot pick the same card two or more times.");
             } else {
                 setupNode(node);
+                trys++;
+            }
+        } else {
+            if (clkdDivs.includes(node)) {
+                alert("You cannot pick the same card two or more times.");
+            } else {
+                setupNode(node);
+
                 if (
-                    clkdDivs[0].firstElementChild.src ==
-                    clkdDivs[1].firstElementChild.src
+                    clkdDivs.every(
+                        (element) =>
+                            element.firstElementChild.src ==
+                            clkdDivs[0].firstElementChild.src
+                    )
                 ) {
                     score++;
                     attempts = 3;
@@ -94,17 +109,18 @@ function clicked(node) {
                         setupEnv();
                     }, 500);
                 } else {
-                    setTimeout(function () {
-                        alert("Nice try, Better Luck Next Time.");
-                        resetEnv();
-                        imgPaths.setupPaths();
-                        setupEnv();
-                    }, 100);
-
+                    console.log(clkdDivs);
                     attempts = 3;
                     score = 0;
                     atpt.textContent = `Attempts: ${attempts}`;
                     src.textContent = `Score: ${score}`;
+
+                    setTimeout(function () {
+                        alert("Game Over, Better Luck Next Time.");
+                        resetEnv();
+                        imgPaths.setupPaths();
+                        setupEnv();
+                    }, 100);
                 }
             }
         }
@@ -119,11 +135,14 @@ function setupNode(node) {
 function resetEnv() {
     let fItem = clkdDivs.pop();
     let sItem = clkdDivs.pop();
+    let tItem = clkdDivs.pop();
 
     fItem.firstElementChild.width = 0;
     fItem.firstElementChild.height = 0;
     sItem.firstElementChild.width = 0;
     sItem.firstElementChild.height = 0;
+    tItem.firstElementChild.width = 0;
+    tItem.firstElementChild.height = 0;
 
     trys = 1;
 }
@@ -134,5 +153,14 @@ function setupEnv() {
     }
 }
 
+function handleUrl(val) {
+    if (val === "easy") {
+        open("../../index.html", "_self");
+    } else if (val === "standard") {
+        open("code/D_Standard/index.html", "_self");
+    } else {
+        open("../D_Hard/index.html", "_self");
+    }
+}
 imgPaths.setupPaths();
 setupEnv();
