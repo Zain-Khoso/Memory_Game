@@ -24,6 +24,27 @@ body {
         border-radius: 1.5em;
         margin: 10px auto 10px auto;
     }
+    #dif {
+        position: fixed;
+        width: fit-content;
+        top: 2em;
+        left: 10em;
+    }
+    #dif h3 {
+        text-align: center;
+        color: black;
+        font-size: x-large;
+    }
+    #difficulty {
+        box-sizing: border-box;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.397);
+        color: white;
+        font-size: larger;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 1em;
+    }
     
     #container {
         width: 23em;
@@ -104,6 +125,27 @@ body {
         border-radius: 1em;
         margin: 5px auto 5px auto;
     }
+    #dif {
+        position: fixed;
+        width: fit-content;
+        top: 1em;
+        left: 1em;
+    }
+    #dif h3 {
+        text-align: center;
+        color: black;
+        font-size: large;
+    }
+    #difficulty {
+        box-sizing: border-box;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.397);
+        color: white;
+        font-size: large;
+        padding: 3px;
+        border: 1px solid black;
+        border-radius: 1em;
+    }
     
     #container {
         width: 18em;
@@ -182,6 +224,23 @@ body {
         border: 1px solid black;
         padding: 2px;
         margin: 2px auto 2px auto;
+    }
+    #dif {
+        position: fixed;
+        width: fit-content;
+    }
+    #dif h3 {
+        text-align: center;
+        color: black;
+        font-size: medium;
+    }
+    #difficulty {
+        box-sizing: border-box;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.397);
+        color: white;
+        font-size: small;
+        border: 1px solid black;
     }
     
     #container {
