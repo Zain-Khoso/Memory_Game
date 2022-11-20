@@ -27,7 +27,7 @@ body {
     #dif {
         position: fixed;
         width: fit-content;
-        top: 2em;
+        top: 6.4em;
         left: 10em;
     }
     #dif h3 {
@@ -52,7 +52,7 @@ body {
         background-color: rgba(255, 255, 255, 0.293);
         padding: 1.5em 1em 1em 1.5em;
         border-radius: 1.5em;
-        margin: 2em auto 2em auto;
+        margin: 5em auto 2em auto;
     
         display: grid;
     }
@@ -128,7 +128,7 @@ body {
     #dif {
         position: fixed;
         width: fit-content;
-        top: 1em;
+        top: 5em;
         left: 1em;
     }
     #dif h3 {
@@ -153,7 +153,7 @@ body {
         background-color: rgba(255, 255, 255, 0.293);
         padding: 1em 0.5em 0.5em 1em;
         border-radius: 1em;
-        margin: 1em auto 1em auto;
+        margin: 5em auto 1em auto;
     
         display: grid;
     }
@@ -228,6 +228,7 @@ body {
     #dif {
         position: fixed;
         width: fit-content;
+        top: 2em;
     }
     #dif h3 {
         text-align: center;
@@ -248,7 +249,7 @@ body {
         height: fit-content;
         background-color: rgba(255, 255, 255, 0.293);
         padding: 0.5em;
-        margin: 0.5em auto 0.5em auto;
+        margin: 3em auto 0.5em auto;
     
         display: grid;
     }
