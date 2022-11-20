@@ -28,7 +28,7 @@ body {
         position: fixed;
         width: fit-content;
         top: 6.4em;
-        left: 10em;
+        left: 20em;
     }
     #dif h3 {
         text-align: center;
@@ -52,7 +52,7 @@ body {
         background-color: rgba(255, 255, 255, 0.293);
         padding: 1.5em 1em 1em 1.5em;
         border-radius: 1.5em;
-        margin: 5em auto 2em auto;
+        margin: 5em auto 10px auto;
     
         display: grid;
     }
@@ -129,7 +129,7 @@ body {
         position: fixed;
         width: fit-content;
         top: 5em;
-        left: 1em;
+        left: 8em;
     }
     #dif h3 {
         text-align: center;
@@ -249,7 +249,7 @@ body {
         height: fit-content;
         background-color: rgba(255, 255, 255, 0.293);
         padding: 0.5em;
-        margin: 3em auto 0.5em auto;
+        margin: 3em auto 2px auto;
     
         display: grid;
     }
