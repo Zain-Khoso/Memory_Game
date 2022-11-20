@@ -19,7 +19,7 @@ const imgPaths = [];
 const clkdDivs = [];
 
 let trys = 1;
-let attempts = 3;
+let attempts = 4;
 let score = 0;
 
 function clicked(node) {
@@ -48,7 +48,7 @@ function clicked(node) {
                     )
                 ) {
                     score++;
-                    attempts = 3;
+                    attempts = 4;
                     src.textContent = `Score: ${score}`;
                     atpt.textContent = `Attempts: ${attempts}`;
 
@@ -96,7 +96,7 @@ function clicked(node) {
                     )
                 ) {
                     score++;
-                    attempts = 3;
+                    attempts = 4;
                     src.textContent = `Score: ${score}`;
                     atpt.textContent = `Attempts: ${attempts}`;
 
@@ -110,7 +110,7 @@ function clicked(node) {
                     }, 500);
                 } else {
                     console.log(clkdDivs);
-                    attempts = 3;
+                    attempts = 4;
                     score = 0;
                     atpt.textContent = `Attempts: ${attempts}`;
                     src.textContent = `Score: ${score}`;
