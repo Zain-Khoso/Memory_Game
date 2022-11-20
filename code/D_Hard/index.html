@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Still working on it</h1>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Memory Game</title>
+    </head>
+    <body>
+        <div id="heading">
+            <h1>Memory Game</h1>
+        </div>
+        <div id="dif">
+            <h3>Difficulty</h3>
+            <select id="difficulty" onchange="handleUrl(this.value)">
+                <option value="easy">Easy</option>
+                <option value="standard">Standard</option>
+                <option value="hard" selected disabled>Hard</option>
+            </select>
+        </div>
+        <div id="container">
+            <div class="item" id="item1" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item2" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item3" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item4" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item5" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item6" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item7" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item8" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item9" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item10" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item11" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item12" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item13" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item14" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item15" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+            <div class="item" id="item16" onclick="clicked(this)">
+                <img width="0" height="0" />
+            </div>
+        </div>
+        <div id="stats">
+            <h2 id="src">Score: 0</h2>
+            <h2 id="atpt">Attempts: 5</h2>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
 </html>
