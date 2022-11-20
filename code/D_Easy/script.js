@@ -2,12 +2,12 @@ Array.prototype.random = function () {
     return this.splice(Math.floor(Math.random() * this.length), 1)[0];
 };
 Array.prototype.setupPaths = function () {
-    this.push("assets/cat.jpg")
-    this.push("assets/elephant.jpg")
-    this.push("assets/lion.png")
-    this.push("assets/cat.jpg")
-    this.push("assets/elephant.jpg")
-    this.push("assets/lion.png")
+    this.push("assets/imgs/cat.jpg")
+    this.push("assets/imgs/elephant.jpg")
+    this.push("assets/imgs/lion.png")
+    this.push("assets/imgs/cat.jpg")
+    this.push("assets/imgs/elephant.jpg")
+    this.push("assets/imgs/lion.png")
 };
 const imgPaths = [];
 const clkdDivs = [];
